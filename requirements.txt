@@ -1,0 +1,3 @@
+pytest
+notion-client
+notion2md
