@@ -4,8 +4,8 @@ import re
 from datetime import datetime
 
 # Notion 설정
-#NOTION_TOKEN = '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'
-#DATABASE_ID_DATABASE_ID = 'e96e75c4768f47629b1c454838710074'
+NOTION_TOKEN = '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'
+DATABASE_ID_DATABASE_ID = 'e96e75c4768f47629b1c454838710074'
 
 headers = {
     "Authorization": f"Bearer {NOTION_TOKEN}",
