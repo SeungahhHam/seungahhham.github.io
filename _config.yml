@@ -24,7 +24,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: My Little IT Archive
+title: My Small IT Archive
 email: your-email@domain.com
 author: SeungahhHam
 
@@ -40,7 +40,7 @@ author: SeungahhHam
 #   "Copyright (c) 2017-{currentYear} <a href="https://example.com">{author}</a>"
 #   "Copyright © 2017-2021 Foobar"
 #
-copyright: "Unpublished Work (cleft) 2025~{currentYear} {author}"
+copyright: "Unpublished Work (cleft) 2025-{currentYear} {author}"
 
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -48,13 +48,13 @@ description: >- # this means to ignore newlines until "baseurl:"
   Google search results) and in your feed.xml site description.
 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://seungahhham.github.io/" # the base hostname & protocol for your site, e.g. https://example.com
-#favicon: "my_favicon.png" # the favicon for your site
+url: "" # the base hostname & protocol for your site, e.g. https://example.com
+favicon: "" # the favicon for your site
 
 # Yat date format
 # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
 yat:
-  date_format: "%년 %월, %일"
+  date_format: "%b %d, %Y"
 
 # If you want more debug log, you can set true
 # debug: false
@@ -73,7 +73,7 @@ yat:
 # sitemap: false
 
 # If you want to change site language, you can set lang option
-lang: "ko"  # default lang is en
+# lang: "en"  # default lang is en
 
 # Translate languges
 # langs refer to https://cloud.google.com/translate/docs/languages
@@ -108,7 +108,7 @@ lang: "ko"  # default lang is en
 # spacegrey: #353535
 # snowwhite: #ffffff
 #
-theme_color: "#e2d4e4"
+# theme_color: snowwhite
 #
 # Custom color as below:
 # theme_color: "#882250"
@@ -122,7 +122,7 @@ theme_color: "#e2d4e4"
 # brand_color: orangered
 #
 # Custom color as below:
-brand_color: "#c5bfe5"
+# brand_color: "#1a8e42"
 
 # Night/Dark mode
 # Default mode is "auto", "auto" is for auto nightshift
@@ -135,7 +135,7 @@ brand_color: "#c5bfe5"
 # it will be always kept on every visit (i.e. no matter
 # the browser is closed or not)
 #
-night_mode: "auto"
+# night_mode: "auto"
 
 # Code badge setting
 # You can enable or disable the code badge and so on
@@ -147,37 +147,35 @@ night_mode: "auto"
 
 # If you want to link only specific pages in your header, uncomment
 # this and add the path to the pages in order as they should show up
-header_pages:
-   - index.html
-   - archives.html
-   - categories.html
-   - tags.html
-   - about.md
+# header_pages:
+#   - index.html
+#   - archives.html
+#   - categories.html
+#   - tags.html
+#   - about.md
 
 # Page default value
-defaults:
-  home:
-    heading: "My Little IT Archive"
-    subheading: "DataBase"
-    banner: 
-      background: "rgba(236,220,243, 0.8)"  # Banner background (Could be a image)
-      height: "640px"         # Banner default height
+# defaults:
+#   home:
+#     heading: "Your awesome heading"
+#     subheading: "Your awesome subheading"
+#     banner: "Your image url"
 
 # Banner default settings
 # These banner settings are for global banner default, but you can also
 # config it by the front matter for one specific post
-banner:
-      #video: null             # Video banner source
-      #loop: true              # Video loop
-      #volume: 0               # Video volume (100% is 1.0)
-      #start_at: 0             # Video start time
-      #image: null             # Image banner source
-      #opacity: 1.0            # Banner opacity (100% is 1.0)
-      #background: "rgba(0,0,0, 0.8)"  # Banner background (Could be a image)
-      #height: "640px"         # Banner default height
-      #min_height: null        # Banner minimum height
-      #heading_style: null     # Custom heading style (e.g. "font-weight: bold; text-decoration: underline")
-      #subheading_style: null  # Custom subheading style (e.g. color: gold)
+# banner:
+#   video: null             # Video banner source
+#   loop: true              # Video loop
+#   volume: 0               # Video volume (100% is 1.0)
+#   start_at: 0             # Video start time
+#   image: null             # Image banner source
+#   opacity: 1.0            # Banner opacity (100% is 1.0)
+#   background: "rgba(0, 0, 0, 0.8)"  # Banner background (Could be a image)
+#   height: "640px"         # Banner default height
+#   min_height: null        # Banner minimum height
+#   heading_style: null     # Custom heading style (e.g. "font-weight: bold; text-decoration: underline")
+#   subheading_style: null  # Custom subheading style (e.g. color: gold)
 
 # Excerpt size setting
 # excerpt_size: 350
@@ -190,12 +188,12 @@ banner:
 #   shortname: "Your Disqus username"
 
 # Gitment comments
-gitment:
-  username: "SeungahhHam"
-  #repo: "The repo to store comments"
-  #client_id: "Your client ID"
-  #client_secret: "Your client secret"
-  redirect_uri: "https://seungahhham.github.io/"   # If you use a custom domain name
+# gitment:
+#   username: "Your GitHub username"
+#   repo: "The repo to store comments"
+#   client_id: "Your client ID"
+#   client_secret: "Your client secret"
+#   redirect_uri: "Your redirect url"   # If you use a custom domain name
 
 # Utterances comments
 # See https://utteranc.es/
