@@ -27,11 +27,10 @@ jobs:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
 
-      - name: Commit and push changes
+      - name: Commit changes
         run: |
           git config user.name "notion-bot"
           git config user.email "bot@example.com"
           git add .
-          git commit -m "Auto update from Notion" || echo "No changes to commit"
-          git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/SeungahhHam/seungahhham.github.io.git
-          git push origin main
+          git commit -m "Auto update from Notion" || echo "No changes"
+          git push
