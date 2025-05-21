@@ -1,3 +1,4 @@
 pytest
+notion
 notion-client
 notion2md

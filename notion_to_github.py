@@ -1,7 +1,10 @@
-from notion_client import Client
 import os
+from notion_client import Client
 from notion2md.exporter.block import MarkdownExporter
 from datetime import datetime
+
+NOTION_TOKEN = "e96e75c4768f47629b1c454838710074"
+NOTION_DATABASE_ID = "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"
 
 NOTION_TOKEN = os.getenv("NOTION_TOKEN")
 DATABASE_ID = os.getenv("NOTION_DATABASE_ID")
@@ -20,6 +23,9 @@ response = client.databases.query(
         }
     }
 )
+
+print(response)
+print("end")
 
 exporter = MarkdownExporter(client)
 
