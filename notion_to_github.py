@@ -4,8 +4,8 @@ import re
 from datetime import datetime
 
 # Notion 설정
-NOTION_TOKEN = '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'
-DATABASE_ID = 'e96e75c4768f47629b1c454838710074'
+#NOTION_TOKEN = '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'
+#DATABASE_ID_DATABASE_ID = 'e96e75c4768f47629b1c454838710074'
 
 headers = {
     "Authorization": f"Bearer {NOTION_TOKEN}",
@@ -13,7 +13,7 @@ headers = {
     "Content-Type": "application/json"
 }
 
-url = f"https://api.notion.com/v1/databases/{DATABASE_ID}/query"
+url = f"https://api.notion.com/v1/databases/{DATABASE_ID_DATABASE_ID}/query"
 
 
 # ✅ 필터 조건 추가: multi_select의 값 중 'Publish' 포함 여부
