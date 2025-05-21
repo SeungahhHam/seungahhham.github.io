@@ -151,9 +151,9 @@ for page in pages:
         title = get_page_title(page_id)
         safe_title = sanitize_filename(title)
         today = datetime.today().strftime("%Y-%m-%d")
-        with open(f'{today}-{safe_title}.json', 'w', encoding='utf-8') as f:
-            json.dump(content, f, ensure_ascii=False, indent=4)
-        with open(f"{today}-{safe_title}.md", "w", encoding="utf-8") as f:
+        #with open(f'_posts/{today}-{safe_title}.json', 'w', encoding='utf-8') as f:
+        #    json.dump(content, f, ensure_ascii=False, indent=4)
+        with open(f"_posts/{today}-{safe_title}.md", "w", encoding="utf-8") as f:
             blocks = get_blocks(page_id)
             markdown_content = ''.join([block_to_md(b) for b in blocks])
             f.write(markdown_content)
