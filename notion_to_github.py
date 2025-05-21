@@ -1,6 +1,7 @@
 from notion_client import Client
 import os
 from notion2md.exporter.block import MarkdownExporter
+from datetime import datetime
 
 NOTION_TOKEN = os.getenv("NOTION_TOKEN")
 DATABASE_ID = os.getenv("NOTION_DATABASE_ID")
@@ -41,7 +42,8 @@ for page in response["results"]:
     md = exporter.export(page_id)
 
     # 3. 파일로 저장
-    filename = f"posts/{title.replace(' ', '_')}.md"
+    today = datetime.today().strftime("%Y-%m-%d")
+    filename = f"_posts/{today}-{title.replace(' ', '_')}.md"
     with open(filename, "w", encoding="utf-8") as f:
         f.write(md)
 
