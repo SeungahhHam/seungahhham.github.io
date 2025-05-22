@@ -110,8 +110,16 @@ yat:
 #
 # theme_color: snowwhite
 #
+#Colors in Palette
+#Hex    RGB
+#FFC7C7 rgb(255, 199, 199)
+#FFE2E2 rgb(255, 226, 226)
+#F6F6F6 rgb(246, 246, 246)
+#8785A2 rgb(135, 133, 162)
+#https://colorhunt.co/palette/ffc7c7ffe2e2f6f6f68785a2
+#
 # Custom color as below:
-theme_color: "#ddadad"
+theme_color: "#b39eb5"
 
 # You can choose a brand color
 # Default brand colors as below:
@@ -122,7 +130,7 @@ theme_color: "#ddadad"
 # brand_color: orangered
 #
 # Custom color as below:
-brand_color: "#9fb9bf"
+brand_color: "#796878"
 
 # Night/Dark mode
 # Default mode is "auto", "auto" is for auto nightshift
