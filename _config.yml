@@ -25,7 +25,7 @@
 # in the templates via {{ site.myvariable }}.
 
 title: My Small IT Archive
-email: your-email@domain.com
+email: saham7532@naver.com
 author: SeungahhHam
 
 # Copyright setting
@@ -48,7 +48,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Google search results) and in your feed.xml site description.
 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. https://example.com
+url: "https://seungahhham.github.io" # the base hostname & protocol for your site, e.g. https://example.com
 favicon: "" # the favicon for your site
 
 # Yat date format
@@ -111,7 +111,7 @@ yat:
 # theme_color: snowwhite
 #
 # Custom color as below:
-# theme_color: "#882250"
+theme_color: "#ddadad"
 
 # You can choose a brand color
 # Default brand colors as below:
@@ -122,7 +122,7 @@ yat:
 # brand_color: orangered
 #
 # Custom color as below:
-# brand_color: "#1a8e42"
+brand_color: "#9fb9bf"
 
 # Night/Dark mode
 # Default mode is "auto", "auto" is for auto nightshift
