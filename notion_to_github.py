@@ -50,7 +50,7 @@ def get_page_metadata(page_id):
     url = f"https://api.notion.com/v1/pages/{page_id}"
     response = requests.get(url, headers=headers)
     title = f"notion_page_{page_id}"
-    category = "notion"
+    category = "NAN"
 
     if response.status_code == 200:
         props = response.json()["properties"]
@@ -63,7 +63,7 @@ def get_page_metadata(page_id):
             elif key.lower() == "Tag" and value["type"] == "text":
                 tag = value["text"]["name"]
 
-    return title, category, tag
+    return category, tag
 
 def rich_text_to_md(rich_text):
     md = ""
@@ -180,8 +180,7 @@ for page in pages:
     if res.status_code == 200:
         content = res.json()
         title = get_page_title(page_id)
-        category = get_page_title(page_id).category
-        tag = get_page_title(page_id).tag
+        category, tag = get_page_title(page_id)
         safe_title = sanitize_filename(title)
         today = datetime.today().strftime("%Y-%m-%d")
         #with open(f'_posts/{today}-{safe_title}.json', 'w', encoding='utf-8') as f:
