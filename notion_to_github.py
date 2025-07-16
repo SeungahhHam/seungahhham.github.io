@@ -180,6 +180,8 @@ for page in pages:
     if res.status_code == 200:
         content = res.json()
         title = get_page_title(page_id)
+        category = get_page_title(page_id).category
+        tag = get_page_title(page_id).tag
         safe_title = sanitize_filename(title)
         today = datetime.today().strftime("%Y-%m-%d")
         #with open(f'_posts/{today}-{safe_title}.json', 'w', encoding='utf-8') as f:
