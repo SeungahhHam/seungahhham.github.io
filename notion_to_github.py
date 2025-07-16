@@ -135,6 +135,10 @@ def block_to_md(block, indent=""):
             divider = "| " + " | ".join(["---"] * len(table_rows[0])) + " |\n"
             body = "".join([f"| {' | '.join(r)} |\n" for r in table_rows[1:]])
             content = header + divider + body
+    elif t == "callout":
+        icon = b.get("icon", {}).get("emoji", "")
+        text = rich_text_to_md(b["rich_text"])
+        content = f"> {icon} {text}\n"
     else:
         content = f"[Unsupported block type: {t}]\n"
 
