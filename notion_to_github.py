@@ -50,7 +50,8 @@ def get_page_metadata(page_id):
     url = f"https://api.notion.com/v1/pages/{page_id}"
     response = requests.get(url, headers=headers)
     title = f"notion_page_{page_id}"
-    category = "NAN"
+    category = "ETC"
+    tag = ""
 
     if response.status_code == 200:
         props = response.json()["properties"]
