@@ -60,8 +60,8 @@ def get_page_metadata(page_id):
                 title = "".join([part["text"]["content"] for part in title_parts])
             elif key.lower() == "WHAT" and value["type"] == "select":
                 category = value["select"]["name"]
-            elif key.lower() == "Tag" and value["type"] == "text":
-                tag = value["text"]["name"]
+            elif key == "Description" and value["type"] == "rich_text":
+                description = "".join([part["plain_text"] for part in value["rich_text"]])
 
     return category, tag
 
