@@ -40,7 +40,7 @@ author: SeungahhHam
 #   "Copyright (c) 2017-{currentYear} <a href="https://example.com">{author}</a>"
 #   "Copyright © 2017-2021 Foobar"
 #
-copyright: "Unpublished Work (cleft) 2025-{currentYear} {author}"
+copyright: "Unpublished Work 2025-{currentYear} {author}"
 
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -119,7 +119,7 @@ yat:
 #https://colorhunt.co/palette/ffc7c7ffe2e2f6f6f68785a2
 #
 # Custom color as below:
-theme_color: "#b39eb5"
+theme_color: "#cbbeb6"
 
 # You can choose a brand color
 # Default brand colors as below:
@@ -130,7 +130,7 @@ theme_color: "#b39eb5"
 # brand_color: orangered
 #
 # Custom color as below:
-brand_color: "#796878"
+brand_color: "#cbbeb6"
 
 # Night/Dark mode
 # Default mode is "auto", "auto" is for auto nightshift
