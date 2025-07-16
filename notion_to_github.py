@@ -119,6 +119,17 @@ def block_to_md(block, indent=""):
 
     return content
 
+# ✅ 저장된 title/url 목록 불러오기
+history_path = "saved_pages.json"
+if os.path.exists(history_path):
+    with open(history_path, "r", encoding="utf-8") as f:
+        saved_pages = json.load(f)
+else:
+    saved_pages = []
+
+saved_titles = {p["title"] for p in saved_pages}
+saved_urls = {p["url"] for p in saved_pages}
+
 response = requests.post(url, headers=headers, json=payload)
 
 if response.status_code == 200:
@@ -158,6 +169,16 @@ for page in pages:
             markdown_content = ''.join([block_to_md(b) for b in blocks])
             f.write(markdown_content)
         print(f"✅ {safe_title} 페이지 내용 저장 완료!")
+
+        # ✅ 저장 기록에 추가
+        saved_pages.append({"title": title, "url": full_url})
+        saved_titles.add(title)
+        saved_urls.add(full_url)
+
+        # ✅ 저장 기록 업데이트
+        with open(history_path, "w", encoding="utf-8") as f:
+          json.dump(saved_pages, f, ensure_ascii=False, indent=4)
+      
     else:
         print(f"❌ {safe_title} 페이지 로드 실패: {res.status_code}")
 
