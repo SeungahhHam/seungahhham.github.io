@@ -46,6 +46,25 @@ def get_page_title(page_id):
                 return "".join([part["text"]["content"] for part in title_parts])
     return f"notion_page_{page_id}"
 
+def get_page_metadata(page_id):
+    url = f"https://api.notion.com/v1/pages/{page_id}"
+    response = requests.get(url, headers=headers)
+    title = f"notion_page_{page_id}"
+    category = "notion"
+
+    if response.status_code == 200:
+        props = response.json()["properties"]
+        for key, value in props.items():
+            if value["type"] == "title":
+                title_parts = value["title"]
+                title = "".join([part["text"]["content"] for part in title_parts])
+            elif key.lower() == "WHAT" and value["type"] == "select":
+                category = value["select"]["name"]
+            elif key.lower() == "Tag" and value["type"] == "text":
+                tag = value["text"]["name"]
+
+    return title, category, tag
+
 def rich_text_to_md(rich_text):
     md = ""
     for part in rich_text:
@@ -166,6 +185,12 @@ for page in pages:
         #with open(f'_posts/{today}-{safe_title}.json', 'w', encoding='utf-8') as f:
         #    json.dump(content, f, ensure_ascii=False, indent=4)
         with open(f"_posts/{today}-{safe_title}.md", "w", encoding="utf-8") as f:
+            front_matter = f"""---
+            layout: post
+            title: {title}
+            categories: {category}
+            tags: {tag}
+            ---
             blocks = get_blocks(page_id)
             markdown_content = ''.join([block_to_md(b) for b in blocks])
             f.write(markdown_content)
