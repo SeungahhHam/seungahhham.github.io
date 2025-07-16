@@ -197,10 +197,10 @@ for page in pages:
             categories: {category}
             tags: {tag}
             ---
-
             """
             blocks = get_blocks(page_id)
             markdown_content = ''.join([block_to_md(b) for b in blocks])
+            f.write(front_matter)
             f.write(markdown_content)
         print(f"✅ {safe_title} 페이지 내용 저장 완료!")
         # ✅ 저장 기록에 추가
