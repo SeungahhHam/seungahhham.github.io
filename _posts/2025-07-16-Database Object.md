@@ -1,10 +1,4 @@
----
-            layout: post
-            title: Database Object
-            categories: ETC
-            tags: 
-            ---
-            ### Object (객체)
+### Object (객체)
 - 데이터베이스 안에서 정의하는 모든 것
 - 데이터를 관리하기 위해 생성
 - 대표적으로 table, index, view, sequence, synonym
