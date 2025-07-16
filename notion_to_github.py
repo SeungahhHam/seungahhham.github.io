@@ -89,6 +89,13 @@ def block_to_md(block, indent=""):
     t = block["type"]
     b = block[t]
     content = ""
+    content = f"""---
+            layout: post
+            title: {title}
+            categories: {category}
+            tags: {tag}
+            ---
+            """
 
     def get_children_md():
         children = get_blocks(block["id"])
@@ -191,16 +198,8 @@ for page in pages:
         #with open(f'_posts/{today}-{safe_title}.json', 'w', encoding='utf-8') as f:
         #    json.dump(content, f, ensure_ascii=False, indent=4)
         with open(f"_posts/{today}-{safe_title}.md", "w", encoding="utf-8") as f:
-            front_matter = f"""---
-            layout: post
-            title: {title}
-            categories: {category}
-            tags: {tag}
-            ---
-            """
             blocks = get_blocks(page_id)
             markdown_content = ''.join([block_to_md(b) for b in blocks])
-            f.write(front_matter)
             f.write(markdown_content)
         print(f"✅ {safe_title} 페이지 내용 저장 완료!")
         # ✅ 저장 기록에 추가
