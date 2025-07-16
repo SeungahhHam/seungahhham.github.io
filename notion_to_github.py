@@ -1,6 +1,7 @@
 import requests
 import json
 import re
+import os
 from datetime import datetime
 
 # Notion 설정
