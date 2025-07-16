@@ -89,6 +89,10 @@ def block_to_md(block, indent=""):
     t = block["type"]
     b = block[t]
     content = ""
+
+    def get_children_md():
+        children = get_blocks(block["id"])
+        return ''.join([block_to_md(child, indent + "  ") for child in children])
     content = f"""---
             layout: post
             title: {title}
@@ -96,11 +100,7 @@ def block_to_md(block, indent=""):
             tags: {tag}
             ---
             """
-
-    def get_children_md():
-        children = get_blocks(block["id"])
-        return ''.join([block_to_md(child, indent + "  ") for child in children])
-
+  
     if t == "paragraph":
         content = indent + rich_text_to_md(b["rich_text"]) + "\n"
     elif t == "heading_1":
